@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from "react";
-import React from "react";
+import "../../styles/index.css";
 
 function SecondsCounter(props) {
-  // const SecondsCounter = () => {
   const [seconds, setSeconds] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setSeconds((prevSeconds) => prevSeconds + 1);
-
-      // ReactDOM.createRoot(document.getElementById("app")).render(
-      //   <SecondsCounter />
-      // );
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
-  // function SecondsCounter(props) {
+
+  // Descomposición de los segundos en unidades, decenas y centenas
+  const unidades = Math.floor(seconds % 10);
+  const decenas = Math.floor((seconds / 10) % 10);
+  const centenas = Math.floor((seconds / 100) % 10);
+
+  props.counter [unidades, decenas, centenas];
+
   return (
-    <div className="container text-bg-dark d-flex justify-content-center align-items-center mt-5">
-      <div className="row align-items-center col-2 text-bg-secondary p-3 my-1 h-50 mx-2 rounded-3">
+    <div
+      className="container text-bg-dark d-flex justify-content-center align-items-center mt-5
+    "
+    >
+      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="75"
@@ -32,32 +38,31 @@ function SecondsCounter(props) {
         </svg>
       </div>
 
-      <div className="row align-items-center col-1 text-bg-secondary p-3 my-0 mx-2  rounded-3">
+      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
         <h1>0</h1>
       </div>
 
-      <div className="row align-items-center col-1 text-bg-secondary p-3 m-5 mx-2 rounded-3">
+      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
         <h1>0</h1>
       </div>
 
-      <div className="row align-items-center col-1 text-bg-secondary p-3 m-5 mx-2 rounded-3 ">
-        <h1>0</h1>
+      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white ">
+        <h1>{props.counter  / 1 % 10}</h1>
       </div>
 
-      <div className="row align-items-center col-1 text-bg-secondary p-3 m-5 mx-2 rounded-3">
-        <h1>0</h1>
+      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+        <h1>{props.counter / 1 % 10}</h1>
       </div>
 
-      <div className="row align-items-center col-1 text-bg-secondary p-3 m-5 mx-2  rounded-3">
-        <h1>0</h1>
+      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+        <h1>{props.counter / 1  % 10 }</h1>
       </div>
 
-      <div className="row align-items-center col-1 text-bg-secondary p-3 m-5 mx-2  rounded-3">
-        <h1>{props.interval}</h1>
+      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+        <h1>{props.counter  % 10}</h1>
       </div>
     </div>
   );
-  // };
 }
 
 export default SecondsCounter;
