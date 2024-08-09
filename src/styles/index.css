@@ -12,3 +12,16 @@
 body {
   background-color: aqua;
 }
+
+.container {
+  height: 150px;
+}
+
+h1 {
+  font-size: 70px;
+}
+i{
+  font-size: 70px;
+  width: 100%;
+
+}

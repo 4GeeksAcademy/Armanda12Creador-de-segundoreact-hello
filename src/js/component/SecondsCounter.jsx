@@ -13,11 +13,12 @@ function SecondsCounter(props) {
   }, []);
 
   // Descomposición de los segundos en unidades, decenas y centenas
-  const unidades = Math.floor(seconds % 10);
-  const decenas = Math.floor((seconds / 10) % 10);
-  const centenas = Math.floor((seconds / 100) % 10);
+  const unidades = Math.floor(props.counter % 10);
+  const decenas = Math.floor((props.counter % 100) / 10);
+  const centenas = Math.floor((props.counter % 1000) / 100);
+  const miles = Math.floor((props.counter % 10000) / 1000);
 
-  props.counter [unidades, decenas, centenas];
+  // props.counter [unidades, decenas, centenas];
 
   return (
     <div
@@ -25,17 +26,7 @@ function SecondsCounter(props) {
     "
     >
       <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="75"
-          height="75"
-          fill="currentColor"
-          className="bi bi-clock"
-          viewBox="0 0 16 16"
-        >
-          <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-        </svg>
+      <i class="fa-regular fa-clock"></i>
       </div>
 
       <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
@@ -47,19 +38,19 @@ function SecondsCounter(props) {
       </div>
 
       <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white ">
-        <h1>{props.counter  / 1 % 10}</h1>
+        <h1>{miles}</h1>
       </div>
 
       <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <h1>{props.counter / 1 % 10}</h1>
+        <h1>{centenas}</h1>
       </div>
 
       <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <h1>{props.counter / 1  % 10 }</h1>
+        <h1>{decenas}</h1>
       </div>
 
       <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <h1>{props.counter  % 10}</h1>
+        <h1>{unidades}</h1>
       </div>
     </div>
   );
