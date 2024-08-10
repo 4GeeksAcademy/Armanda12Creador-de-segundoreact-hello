@@ -14,14 +14,17 @@ body {
 }
 
 .container {
-  height: 150px;
+  height: 124px;
+  margin-top: 5px;
 }
 
 h1 {
   font-size: 70px;
 }
-i{
-  font-size: 70px;
-  width: 100%;
 
+i {
+  font-size: 60px;
+  height: 75px;
+  padding: 10px;
+  margin: 7px;
 }

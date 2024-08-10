@@ -22,35 +22,37 @@ function SecondsCounter(props) {
 
   return (
     <div
-      className="container text-bg-dark d-flex justify-content-center align-items-center mt-5
+      className="container text-bg-dark d-flex justify-content-center align-items-center mt-5 col-12
     "
     >
-      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-      <i class="fa-regular fa-clock"></i>
-      </div>
+      <div className="row row-cols-7 row-cols-sm-7 ">
+        <div className="col align-items-center bg-black p-2 sm text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+          <i class="fa-regular fa-clock"></i>
+        </div>
 
-      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <h1>0</h1>
-      </div>
+        <div className="col align-items-center  bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+          <h1>0</h1>
+        </div>
 
-      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <h1>0</h1>
-      </div>
+        <div className="col align-items-center  bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+          <h1>0</h1>
+        </div>
 
-      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white ">
-        <h1>{miles}</h1>
-      </div>
+        <div className="col align-items-center  bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white ">
+          <h1>{miles}</h1>
+        </div>
 
-      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <h1>{centenas}</h1>
-      </div>
+        <div className="col align-items-center  bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+          <h1>{centenas}</h1>
+        </div>
 
-      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <h1>{decenas}</h1>
-      </div>
+        <div className="col align-items-center  bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+          <h1>{decenas}</h1>
+        </div>
 
-      <div className="row align-items-center col-1 bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
-        <h1>{unidades}</h1>
+        <div className="col align-items-center bg-black p-2 text-dark bg-opacity-50 p-3 my-0 mx-2  rounded-3 text-white">
+          <h1>{unidades}</h1>
+        </div>
       </div>
     </div>
   );
